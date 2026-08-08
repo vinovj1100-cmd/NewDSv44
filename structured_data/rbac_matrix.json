@@ -1,0 +1,30 @@
+{
+  "super_admin": [
+    "all"
+  ],
+  "manager": [
+    "view_dashboard",
+    "manage_orders",
+    "approve_returns",
+    "run_reports",
+    "manage_rules",
+    "view_audit"
+  ],
+  "operator": [
+    "view_dashboard",
+    "scan_items",
+    "pack_orders",
+    "raise_andon",
+    "submit_counts"
+  ],
+  "viewer": [
+    "view_dashboard",
+    "view_reports"
+  ],
+  "finance": [
+    "view_dashboard",
+    "view_reports",
+    "manage_inventory_policy",
+    "export_financial"
+  ]
+}

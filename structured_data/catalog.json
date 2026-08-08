@@ -1,0 +1,134 @@
+[
+  {
+    "sku": "SKU-1001",
+    "product": "Quantum Processor X1",
+    "stock": 450,
+    "location": "A-01",
+    "abc": "A",
+    "velocity": 9.5,
+    "rop": 100,
+    "min": 50,
+    "max": 500
+  },
+  {
+    "sku": "SKU-1002",
+    "product": "Thermal Paste Pro",
+    "stock": 1200,
+    "location": "B-04",
+    "abc": "B",
+    "velocity": 6.2,
+    "rop": 300,
+    "min": 150,
+    "max": 1500
+  },
+  {
+    "sku": "SKU-1003",
+    "product": "Server Chassis 2U",
+    "stock": 45,
+    "location": "C-12",
+    "abc": "C",
+    "velocity": 2.1,
+    "rop": 20,
+    "min": 10,
+    "max": 80
+  },
+  {
+    "sku": "SKU-1004",
+    "product": "Optical Cable 10m",
+    "stock": 850,
+    "location": "A-02",
+    "abc": "A",
+    "velocity": 8.8,
+    "rop": 200,
+    "min": 100,
+    "max": 1000
+  },
+  {
+    "sku": "SKU-1005",
+    "product": "NVMe SSD 2TB",
+    "stock": 320,
+    "location": "A-03",
+    "abc": "A",
+    "velocity": 7.4,
+    "rop": 80,
+    "min": 40,
+    "max": 400
+  },
+  {
+    "sku": "SKU-1006",
+    "product": "Rack PDU 16A",
+    "stock": 90,
+    "location": "B-01",
+    "abc": "B",
+    "velocity": 4.1,
+    "rop": 30,
+    "min": 15,
+    "max": 120
+  },
+  {
+    "sku": "SKU-1007",
+    "product": "Cat6 Patch 1m",
+    "stock": 2400,
+    "location": "B-05",
+    "abc": "B",
+    "velocity": 5.5,
+    "rop": 500,
+    "min": 250,
+    "max": 3000
+  },
+  {
+    "sku": "SKU-1008",
+    "product": "Cooling Fan 120mm",
+    "stock": 600,
+    "location": "C-03",
+    "abc": "C",
+    "velocity": 3.0,
+    "rop": 100,
+    "min": 50,
+    "max": 800
+  },
+  {
+    "sku": "SKU-1009",
+    "product": "GPU Accelerator H100",
+    "stock": 28,
+    "location": "A-04",
+    "abc": "A",
+    "velocity": 9.9,
+    "rop": 10,
+    "min": 5,
+    "max": 40
+  },
+  {
+    "sku": "SKU-1010",
+    "product": "Fiber Transceiver SFP+",
+    "stock": 180,
+    "location": "B-02",
+    "abc": "B",
+    "velocity": 5.8,
+    "rop": 40,
+    "min": 20,
+    "max": 200
+  },
+  {
+    "sku": "SKU-1011",
+    "product": "Label Roll 100x50",
+    "stock": 55,
+    "location": "D-01",
+    "abc": "C",
+    "velocity": 1.8,
+    "rop": 20,
+    "min": 10,
+    "max": 100
+  },
+  {
+    "sku": "SKU-1012",
+    "product": "Packing Tape Clear",
+    "stock": 400,
+    "location": "D-02",
+    "abc": "C",
+    "velocity": 2.5,
+    "rop": 80,
+    "min": 40,
+    "max": 500
+  }
+]

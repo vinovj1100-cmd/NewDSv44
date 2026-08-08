@@ -1,0 +1,150 @@
+/* Neural Fulfillment Mobile PWA — styles.css */
+:root {
+  --bg: #050a19;
+  --panel: rgba(15, 35, 60, 0.55);
+  --accent: #64ffda;
+  --accent2: #00b4db;
+  --text: #ccd6f6;
+  --muted: #8892b0;
+  --danger: #ff6b6b;
+  --ok: #00ff88;
+  --radius: 16px;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body {
+  margin: 0; padding: 0; height: 100%;
+  background: radial-gradient(ellipse at 20% 10%, #0d1b3e 0%, var(--bg) 55%, #020408 100%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+  overscroll-behavior: none;
+}
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 16px; padding-top: max(14px, env(safe-area-inset-top));
+  background: rgba(5, 10, 25, 0.85); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(100, 255, 218, 0.15);
+}
+.brand { font-weight: 700; font-size: 1.05rem; }
+.brand .logo { filter: drop-shadow(0 0 6px var(--accent)); }
+.conn { font-size: 0.78rem; font-family: monospace; }
+.conn.online { color: var(--ok); }
+.conn.offline { color: var(--danger); }
+
+main { padding: 16px 14px 96px; max-width: 720px; margin: 0 auto; }
+.view { display: none; }
+.view.active { display: block; animation: fade .25s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+h2 { font-size: 1.15rem; margin: 6px 0 12px; }
+
+.kpi-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px;
+}
+.kpi {
+  background: var(--panel); border: 1px solid rgba(100, 255, 218, 0.18);
+  border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 4px;
+}
+.kpi-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+.kpi-val { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+
+.row { display: flex; gap: 8px; margin-bottom: 12px; }
+input {
+  flex: 1; width: 100%; min-height: 44px; padding: 10px 14px;
+  background: rgba(10, 25, 47, 0.8); color: var(--text);
+  border: 1px solid rgba(100, 255, 218, 0.25); border-radius: 12px; font-size: 1rem;
+}
+input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(100,255,218,0.15); }
+
+button {
+  min-height: 44px; border: none; border-radius: 12px; font-size: 0.95rem; font-weight: 600;
+  cursor: pointer; padding: 10px 16px; color: #050a19;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+}
+button.primary { width: auto; }
+button.ghost {
+  background: rgba(100, 255, 218, 0.08); color: var(--accent);
+  border: 1px solid rgba(100, 255, 218, 0.3); min-height: 44px;
+}
+button.ghost.small { min-height: 34px; padding: 4px 12px; font-size: 0.85rem; }
+button:active { transform: scale(0.97); }
+
+.card-list { display: flex; flex-direction: column; gap: 10px; }
+.card {
+  background: var(--panel); border: 1px solid rgba(100, 255, 218, 0.15);
+  border-radius: var(--radius); padding: 14px;
+}
+.card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.card-body { font-size: 0.85rem; color: var(--muted); margin-bottom: 4px; }
+.card-actions { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+.small-input { max-width: 90px; }
+
+.tag {
+  font-size: 0.7rem; padding: 3px 8px; border-radius: 10px;
+  background: rgba(100, 255, 218, 0.12); color: var(--accent); font-family: monospace;
+}
+.tag.abc-A { background: rgba(0, 255, 136, 0.18); color: var(--ok); }
+.tag.abc-B { background: rgba(255, 217, 61, 0.18); color: #ffd93d; }
+.tag.abc-C { background: rgba(136, 146, 176, 0.18); color: var(--muted); }
+
+.muted { color: var(--muted); font-size: 0.9rem; text-align: center; padding: 20px; }
+
+/* Bottom nav */
+.bottomnav {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 30;
+  display: flex; justify-content: space-around;
+  background: rgba(5, 10, 25, 0.92); backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(100, 255, 218, 0.15);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.navbtn {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  background: transparent; color: var(--muted); font-size: 0.7rem; padding: 8px 0; min-height: 56px;
+  border-radius: 0;
+}
+.navbtn span { font-size: 0.65rem; }
+.navbtn.active { color: var(--accent); }
+
+/* Toast */
+.toast {
+  position: fixed; bottom: 84px; left: 50%; transform: translateX(-50%);
+  background: rgba(10, 25, 47, 0.95); color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 24px; padding: 10px 18px;
+  font-size: 0.85rem; opacity: 0; pointer-events: none; transition: opacity .2s; z-index: 40;
+}
+.toast.show { opacity: 1; }
+
+/* Offline queue badge */
+.queue-badge {
+  position: fixed; top: 56px; right: 12px; z-index: 25;
+  background: var(--danger); color: #fff; font-size: 0.7rem; font-weight: 600;
+  padding: 5px 10px; border-radius: 12px;
+}
+.queue-badge.hidden { display: none; }
+
+@media (min-width: 600px) {
+  .kpi-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Barcode scanner modal */
+.scanner-modal {
+  position: fixed; inset: 0; z-index: 60;
+  background: rgba(2, 6, 18, 0.82); backdrop-filter: blur(6px);
+  display: none; align-items: center; justify-content: center; padding: 16px;
+}
+.scanner-modal.active { display: flex; }
+.scanner-panel {
+  width: 100%; max-width: 460px;
+  background: var(--panel); border: 1px solid rgba(100, 255, 218, 0.25);
+  border-radius: 18px; padding: 14px;
+}
+.scanner-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.scanner-video {
+  width: 100%; max-height: 60vh; border-radius: 14px; background: #000;
+  object-fit: cover; aspect-ratio: 4 / 3;
+}
+.scanner-status { font-size: 0.85rem; color: var(--muted); margin: 8px 0; text-align: center; }
+.scanner-result { font-size: 1rem; font-weight: 600; color: var(--ok); text-align: center; min-height: 1.4em; }
+.scanner-manual { display: flex; gap: 8px; margin-top: 10px; }
+.scanner-manual button { min-width: 84px; }
+.muted.small { font-size: 0.72rem; text-align: center; margin: 10px 0 2px; }

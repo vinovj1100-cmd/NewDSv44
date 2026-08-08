@@ -1,0 +1,36 @@
+# Neural Fulfillment Platform v4.4 Configuration
+rule_engine:
+  enabled: true
+  rules:
+    - id: auto_wave
+      condition: "pending_orders > 20"
+      action: "generate_wave"
+    - id: queue_alert
+      condition: "queue_items > 30"
+      action: "notify_ops"
+    - id: sla_breach
+      condition: "sla_breached > 0"
+      action: "raise_andon"
+  webhooks:
+    slack: "https://hooks.slack.com/services/xxx/yyy/zzz"
+
+rbac:
+  session_timeout_min: 45
+  max_concurrent_sessions: 3
+
+forecast:
+  model: "ets"
+  horizon_days: 21
+  confidence_level: 0.95
+  seasonality: true
+  min_history: 14
+
+workflow:
+  priority_sla_hours:
+    1: 4
+    2: 8
+    3: 12
+    4: 18
+    5: 24
+    6: 36
+    7: 48

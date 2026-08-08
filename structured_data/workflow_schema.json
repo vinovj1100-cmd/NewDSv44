@@ -1,0 +1,51 @@
+{
+  "states": [
+    "Pending",
+    "Allocated",
+    "Picking",
+    "Picked",
+    "Packing",
+    "Packed",
+    "Shipped",
+    "Cancelled"
+  ],
+  "transitions": {
+    "Pending": [
+      "Allocated",
+      "Cancelled"
+    ],
+    "Allocated": [
+      "Picking",
+      "Pending",
+      "Cancelled"
+    ],
+    "Picking": [
+      "Picked",
+      "Allocated",
+      "Cancelled"
+    ],
+    "Picked": [
+      "Packing",
+      "Picking"
+    ],
+    "Packing": [
+      "Packed",
+      "Picked"
+    ],
+    "Packed": [
+      "Shipped",
+      "Packing"
+    ],
+    "Shipped": [],
+    "Cancelled": []
+  },
+  "sla_hours_by_priority": {
+    "1": 4,
+    "2": 8,
+    "3": 12,
+    "4": 18,
+    "5": 24,
+    "6": 36,
+    "7": 48
+  }
+}

@@ -1,0 +1,45 @@
+neural_fulfillment_v4.4/
+├── app_v44.py                     # Main Streamlit console
+├── db.py                          # SQLite helpers (with all tables)
+├── workflow_engine.py             # State machine, SLA, batch allocation
+├── rule_engine.py                 # YAML‑driven automation
+├── rbac_engine.py                 # Role‑based access control
+├── audit_trail.py                 # Immutable audit log with hash chain
+├── advanced_forecasting.py        # ETS / SARIMA forecasting
+├── report_generator.py            # PDF/Excel/CSV reports
+├── quantum_ai_engine.py           # Quantum ensemble router + predictors
+├── wb_label_processor.py          # Advanced WB/Ozon label detection
+├── floor_ops.py                   # Pack, putaway, andon, SLA
+├── efficiency.py                  # Wave planner, slotting, replenishment, counts, KPI
+├── copilot.py                     # NL analytics over live state
+├── realtime.py                    # Event bus with SSE
+├── guardian.py                    # Health monitoring
+├── dashboard.py                   # Guardian renderer
+├── sync.py                        # Offline queue
+├── memory.py                      # Settings, aliases, templates
+├── integrations.py                # Facade for rule/wf/audit/forecast/reports/rbac
+├── config.yaml                    # Rule engine, RBAC, workflow config
+├── seed_data.py                   # Rich seed data
+├── structured_data/
+│   ├── catalog.json               # SKU master
+│   ├── workflow_schema.json       # States & transitions
+│   ├── rbac_matrix.json           # Permission matrix
+│   └── schema_tables.json         # Table list
+├── mobile/
+│   ├── app.py                     # Flask API
+│   ├── templates/
+│   │   └── index.html             # PWA root
+│   ├── static/
+│   │   ├── styles.css
+│   │   ├── app.js
+│   │   ├── sw.js
+│   │   ├── manifest.json
+│   │   └── icons/                 # PWA icons (192, 512)
+│   └── requirements.txt           # Mobile API deps
+├── requirements_v43.txt           # Updated requirements (for v4.4)
+├── Dockerfile                     # Docker build
+├── docker-compose.yml             # Compose for app + nginx
+├── nginx.conf                     # Reverse proxy for PWA
+└── tests/
+    ├── test_workflow.py
+    └── test_forecasting.py
